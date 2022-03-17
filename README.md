@@ -1,2 +1,2 @@
 # fetch-api-display-data
-git push -u origin main
+https://shairgulimarova.github.io/fetch-api-display-data/
