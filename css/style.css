@@ -32,7 +32,7 @@ html {
       flex-wrap: wrap;
     }
   
-    .products__item {
+    .cards {
       width: 300px;
       margin: 30px; 
       padding: 20px;
@@ -80,4 +80,32 @@ html {
       font-size: 15px;
       line-height: 1.4;
     }
+
+    .products__filters{
+      margin: 0 auto;
+      text-align: center;
+      
+      
+    }
+
+    .products__filter-btn{
+      padding: 10px;
+      width: 150px;
+      border-radius: 10px;
+      background-color:  rgb(1, 12, 34);      
+      color: rgb(194, 189, 189);;
+      font-weight: 700;
+      font-size: 18px;
+      -webkit-box-shadow: 4px 4px 8px 0px rgba(38, 197, 141, 0.35);
+      -moz-box-shadow: 4px 4px 8px 0px rgba(38, 197, 141, 0.35);
+      box-shadow: 4px 4px 8px 0px rgba(38, 197, 141, 0.35);    
+
+    }
+
+
+
+
   
+    .hide{
+      display: none;
+    }

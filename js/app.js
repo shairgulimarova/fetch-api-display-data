@@ -1,6 +1,7 @@
 
 
 window.addEventListener("load", getApiData); 
+ const productsInner = document.querySelector(".products__inner")
 
 function getApiData(){
     fetch("db.json")
@@ -8,11 +9,12 @@ function getApiData(){
         return res.json();
     })
     .then ((data) =>{
-        let output =""; 
+        
 
         data.forEach((elem) =>{
             let cards = document.createElement("div"); 
-            cards.className = ("products__item");
+            cards.classList = `cards ${elem.category}`;
+            productsInner.appendChild(cards);
             
             let img = document.createElement("img"); 
             img.src = elem.img;
@@ -38,7 +40,27 @@ function getApiData(){
             description.innerText = elem.desc; 
             cards.appendChild(description);
             
-             document.querySelector(".products__inner").appendChild(cards); 
+             
+
+             // filtering 
+             const filteredCards = document.querySelectorAll('.cards');
+
+             const btns = document.querySelector('.products__filters')
+             
+             
+             btns.addEventListener('click', (event) => {
+
+                if (event.target.tagName !== 'BUTTON') return false;
+                let filterClass = event.target.dataset['filter'];
+            
+                filteredCards.forEach(elem => {
+                    elem.classList.remove('hide');
+                    if (!elem.classList.contains(filterClass) && filterClass !== 'all') {
+                        elem.classList.add('hide');
+                    }
+                });
+            
+            });
         })
         
        
